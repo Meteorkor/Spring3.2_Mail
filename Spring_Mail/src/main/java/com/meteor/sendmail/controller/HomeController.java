@@ -124,11 +124,24 @@ public class HomeController {
 				
 				String reciver = "doomgreen@paran.com";
 				String subject = "테스트 메일";
-				String content = "이메일 내용";
+				//String content = "이메일 내용";
+				StringBuilder content = new StringBuilder();
+
+				
+				
+				content.append( "<x-meta http-equiv='Content-Type' content='text/html; charset=utf-8'>" );
+				content.append( "<table width=\"100%\">" );
+				content.append( "<img src='https://avatars0.githubusercontent.com/u/5335333?v=3&amp;s=460'>" );
+				content.append( "\n" );
+				content.append( "한글 테스트" );
+				content.append( "<br>" );
+				content.append( "Hello World~!" );
+				content.append( "</table>" );
+				content.append( "</x-meta>" );
 				
 				email.setReciver(reciver);
 				email.setSubject(subject);
-				email.setContent(content);
+				email.setContent(content.toString());
 				
 				
 				
